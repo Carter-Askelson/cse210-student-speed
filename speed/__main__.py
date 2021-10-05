@@ -1,3 +1,5 @@
+""" 
+Legacy code from template
 from game.director import Director
 from game.input_service import InputService
 from game.output_service import OutputService
@@ -9,4 +11,9 @@ def main(screen):
     director = Director(input_service, output_service)
     director.start_game()
 
-Screen.wrapper(main)
+Screen.wrapper(main) """
+
+from game.director import Director
+
+director = Director()
+director.start_game()
