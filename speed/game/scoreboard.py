@@ -16,6 +16,7 @@ class Scoreboard:
         self.score = 0
 
     def update_score(self):
+        self.score += 1
         pass
 
     def return_score(self):
