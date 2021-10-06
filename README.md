@@ -41,3 +41,4 @@ root                    (project root folder)
 ## Authors
 ---
 * # Carter Askelson Askelsonc@gmail.com
+* # Emma Burkett bur20089@byui.edu
