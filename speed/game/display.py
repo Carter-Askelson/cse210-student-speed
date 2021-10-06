@@ -2,7 +2,7 @@ import arcade
 from game.settings import Settings
 
 
-class Display():
+class Display:
     """Outputs the game state. The responsibility of the class is to draw the game state on the terminal. 
     
     Stereotype: 
@@ -13,21 +13,26 @@ class Display():
     """
 
     def __init__(self):
-        # maybe get these from settings.py?
-        self.SCREEN_WIDTH = 1280
-        self.SCREEN_HEIGHT = 960
-        self.SCREEN_TITLE = "Welcome to SPEED"
-        self.RADIUS = 150
+        self.game_settings = Settings()
 
     def render_game(self, score, word_list):
-        arcade.open_window(self.SCREEN_WIDTH, self.SCREEN_HEIGHT, self.SCREEN_TITLE)
+        arcade.open_window(self.game_settings.SCREEN_WIDTH,
+                           self.game_settings.SCREEN_HEIGHT,
+                           self.game_settings.SCREEN_TITLE,
+                           self.game_settings.RADIUS)
         arcade.set_background_color(arcade.color.BLACK)
         arcade.start_render()
+        self.draw_score()
         # display score
         # display each word in word_list
         # display buffer
         arcade.finish_render()
         arcade.run()
+
+    def draw_score(self):
+        score_text = f"Score: {0}"
+        arcade.draw_text(score_text, 8, 936, arcade.csscolor.WHITE, 18)
+
 
 # Test Arcade refrence
 

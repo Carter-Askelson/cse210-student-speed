@@ -10,10 +10,9 @@ class WordBank():
         
         
     """
-    words_list = []
 
     def __init__(self):
-        pass
+        self.words_list = []
 
     def get_words(self, number):
         # get the next number of words from word.txt
