@@ -17,10 +17,6 @@ class Display():
         self.SCREEN_HEIGHT = 960
         self.SCREEN_TITLE = "Welcome to SPEED"
         self.RADIUS = 150
-
-   
-        
-    
     
 
     def render_game(self, score, word_list):
