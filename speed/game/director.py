@@ -36,7 +36,7 @@ class Director:
     def game_play(self):
         while len(self.word_list) == 0:
             userInput = input(">")
-            self.score = self.game_check_answer.check_answer(userInput, self.game_score) #updates score in answercheck
+            self.score = self.game_check_answer.check_answer(self.word_list, userInput, self.game_score) #updates score in answercheck
         return self.score
                
 
