@@ -1,4 +1,5 @@
 import arcade
+import random
 from .settings import Settings
 
 class Display:
@@ -22,11 +23,24 @@ class Display:
         arcade.set_background_color(arcade.color.BLACK)
         arcade.start_render()
         self.draw_score()
+        text_sprites_list = self.create_text_sprites(word_list)
+        text_sprites_list.draw()
+
+
         # display score
         # display each word in word_list
         # display buffer
         arcade.finish_render()
         arcade.run()
+
+    def create_text_sprites(self, word_list):
+        temp_sprite_list = arcade.SpriteList()
+        for word in word_list:
+            temp_sprite_list.append(arcade.create_text_sprite(word,
+                                                              random.randint(100, 850),
+                                                              random.randint(100, 850),
+                                                              arcade.color.WHITE, 18))
+        return temp_sprite_list
 
     def draw_score(self):
         score_text = f"Score: {0}"
