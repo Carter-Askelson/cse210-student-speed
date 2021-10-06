@@ -41,3 +41,4 @@ root                    (project root folder)
 ## Authors
 ---
 * # Carter Askelson Askelsonc@gmail.com
+* Graham Walker walkerg5@byui.edu
