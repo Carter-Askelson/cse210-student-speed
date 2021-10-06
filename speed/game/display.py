@@ -1,8 +1,7 @@
 import arcade
 from game.settings import Settings
 
-
-class Display:
+class Display():
     """Outputs the game state. The responsibility of the class is to draw the game state on the terminal. 
     
     Stereotype: 
@@ -34,7 +33,7 @@ class Display:
         arcade.draw_text(score_text, 8, 936, arcade.csscolor.WHITE, 18)
 
 
-# Test Arcade refrence
+#Test Arcade refrence
 
 # import arcade
 

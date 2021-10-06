@@ -1,12 +1,12 @@
 from director import new_word
 
-from speed.game.Scoreboard import Scoreboard
+from speed.game.scoreboard import Scoreboard
 
 
 class answercheck():
     """Handles if answer is correct.
     
-    Stereotype:
+    Stereotype: 
         Service Provider
 
     Attributes:
