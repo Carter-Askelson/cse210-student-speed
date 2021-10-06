@@ -1,7 +1,7 @@
 import arcade
-from game.wordbank import WordBank
-from game.display import Display
-from game.scoreboard import Scoreboard
+from .wordbank import WordBank
+from .display import Display
+from .scoreboard import Scoreboard
 
 
 class Director:
@@ -24,14 +24,12 @@ class Director:
         self.game_word_bank = WordBank()
 
     def start_game(self):
-        self.add_words(5)
-        self.update_screen_score()
-        self.game_screen.render_game(self.score, self.word_list)
+        self.word_list = self.game_word_bank.get_words()
+        print(self.word_list)
+        # self.update_screen_score()
+        self.game_screen.render_game(0, self.word_list)
 
-    def add_words(self, number):
-        self.word_list = self.game_word_bank.get_words(number)
-        # self.word_list = self.game_word_bank.update_list()
 
-    def update_screen_score(self):
-        self.game_score.update_score()
-        self.score = self.game_score.return_score()
+    # def update_screen_score(self):
+    #     self.game_score.update_score()
+    #     self.score = self.game_score.return_score()

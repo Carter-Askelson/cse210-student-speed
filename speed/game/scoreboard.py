@@ -1,6 +1,6 @@
 
 
-class Scoreboard():
+class Scoreboard:
     """Points earned. The responsibility of Scoreboaard is to keep track of the player's points.
 
     Stereotype:

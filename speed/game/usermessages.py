@@ -1,6 +1,6 @@
 
 
-class usermessages():
+class UserMessages:
     """handles giving the user helpful messages
     
     Stereotype:

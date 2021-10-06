@@ -1,7 +1,7 @@
 import arcade
-from game.settings import Settings
+from .settings import Settings
 
-class Display():
+class Display:
     """Outputs the game state. The responsibility of the class is to draw the game state on the terminal. 
     
     Stereotype: 

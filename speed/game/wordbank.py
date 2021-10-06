@@ -1,6 +1,7 @@
 import random
+from pathlib import Path
 
-class WordBank():
+class WordBank:
     """handles generating words
     
     Stereotype:
@@ -17,16 +18,14 @@ class WordBank():
 
     def get_words(self):
         #get the next number of words from word.txt
+        word_file = Path(__file__).parent / "words" / "words.txt"
+        if not word_file.exists():
+            raise ValueError(f"Word file not found: words.txt")
+
         i = 0
         while i < 5:
-            lines = open('speed\game\words.txt').read().splitlines()
+            lines = open(word_file).read().splitlines()
             self.words_list.append(random.choice(lines))
             i += 1
         return self.words_list
 
-
-    def return_words(self):
-        self.get_words()
-        return self.word_list
-
-#WordBank().get_words() #uncomment to view results of get_words
