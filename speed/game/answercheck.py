@@ -17,15 +17,9 @@ class AnswerCheck:
         self.word_list = []
 
 
-    # def update_word_list(self, wordlist):
-    #     self.word_list = wordlist
-    #
-    # def check_answer(self, new_word):
-    #     if new_word in self.word_list:
-    #         #increase score
-    #         #print success in usermessages
-    #         #director.stargame() or newround()?
-    #         pass
-    #     else:
-    #         #print incorrect in usermessages
-    #         pass
+    def check_answer(self, new_word, scoreboard):
+        for x in len(self.word_list):
+            if new_word == self.word_list[x]:
+                self.word_list.remove(self.word_list[x])
+                score = scoreboard.return_score()
+        return score
