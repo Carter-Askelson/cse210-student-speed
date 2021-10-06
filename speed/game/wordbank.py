@@ -10,15 +10,15 @@ class WordBank():
         
         
     """
+    words_list = []
 
     def __init__(self):
-            
-        self.words_list = []
+        pass
 
     def get_words(self, number):
-        #get the next number of words from word.txt
+        # get the next number of words from word.txt
         pass
 
     def return_words(self):
         self.get_words()
-        return self.word_list
+        return self.words_list

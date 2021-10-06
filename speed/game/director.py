@@ -15,6 +15,7 @@ class Director():
         words (wordbank): 5 words that get sent to display
     """
 
+
     def __init__(self):
         self.word_list = []
         self.score = 0
@@ -26,7 +27,6 @@ class Director():
     def start_game(self):
         self.add_words(5)
         self.update_screen_score()
-        self.game_screen.start_rendering()
         self.game_screen.render_game(self.score, self.word_list)
 
         
@@ -34,7 +34,7 @@ class Director():
 
     def add_words(self, number):
         self.word_list = self.game_word_bank.get_words(number)
-        self.word_list = self.game_word_bank.update_list()
+        # self.word_list = self.game_word_bank.update_list()
 
     def update_screen_score(self):
         self.game_score.update_score()
