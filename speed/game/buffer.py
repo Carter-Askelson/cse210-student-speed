@@ -1,6 +1,6 @@
-import sys
-import answercheck
-class buffer():
+
+
+class Buffer:
     """Detects player input.
 
     Stereotype: 
@@ -12,35 +12,32 @@ class buffer():
     """
 
     def __init__(self):
-            
-            self.new_word = ""
-            self.answerchecker = answercheck()
+        self.new_word = ""
 
     def get_letter(self):
-        
-         """Gets the letter that was typed.
+        """Gets the letter that was typed.
 
-         Args:
-             self (InputService): An instance of InputService.
+        Args:
+            self (InputService): An instance of InputService.
 
-        Returns:
-             string: The letter that was typed.
-        """
+       Returns:
+            string: The letter that was typed.
+       """
 
-        #if ESC pressed:
-            #sys.exit()
+    # if ESC pressed:
+    # sys.exit()
 
-        #elif ENTER pressed
-        #terminal clear()
-        #self.answerchecker.check_answer(self.new_word)
-        
-        #else
-        #self.new_word += new_letter
+    # elif ENTER pressed
+    # terminal clear()
+    # self.answerchecker.check_answer(self.new_word)
 
-#Legacy Code from template
+    # else
+    # self.new_word += new_letter
 
-#import sys
-#from asciimatics.event import KeyboardEvent
+# Legacy Code from template
+
+# import sys
+# from asciimatics.event import KeyboardEvent
 
 # class InputService:
 #     """Detects player input. The responsibility of the class of objects is to detect player keypresses and translate them into a point representing a direction (or velocity).
@@ -54,12 +51,12 @@ class buffer():
 
 #     def __init__(self, screen):
 #         """The class constructor.
-        
+
 #         Args:
 #             self (InputService): An instance of InputService.
 #         """
 #         self._screen = screen
-        
+
 #     def get_letter(self):
 #         """Gets the letter that was typed. If the enter key was pressed returns an asterisk.
 

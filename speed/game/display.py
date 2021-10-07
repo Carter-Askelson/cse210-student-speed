@@ -1,9 +1,10 @@
 import arcade
+
 from settings import Settings
 import random
 
 
-class Display():
+class Display:
     """Outputs the game state. The responsibility of the class is to draw the game state on the terminal. 
     
     Stereotype: 
@@ -12,6 +13,7 @@ class Display():
     Attributes:
         
     """
+
 
     def __init__(self):   
         """Sets the screen size, starting point for the words, and the speeds the words bounce across the screen. 
@@ -23,6 +25,7 @@ class Display():
             None
             
         """
+        self.game_settings = Settings()
         #maybe get these from settings.py?
         self.SCREEN_WIDTH = 1280
         self.SCREEN_HEIGHT = 960
@@ -44,7 +47,9 @@ class Display():
 
    
         
-    
+    def draw_score(self):
+        score_text = f"Score: {0}"
+        arcade.draw_text(score_text, 8, 936, arcade.csscolor.WHITE, 18)
     
 
     def render_game(self, new_score = 0, new_wordlist = ["Example Text1", "Example Text2", "Example Text3", "Example Text4", "Example Text5"]):
@@ -75,6 +80,7 @@ class Display():
     
         Stereotype: 
             Service Provider
+
 
         Arguments:
             delta_time
