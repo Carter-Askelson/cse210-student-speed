@@ -1,6 +1,6 @@
 import arcade
 
-from settings import Settings
+
 import random
 
 
