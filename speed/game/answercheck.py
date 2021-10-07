@@ -1,6 +1,4 @@
 
-
-
 class AnswerCheck:
     """Handles if answer is correct.
     
