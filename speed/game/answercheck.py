@@ -1,6 +1,6 @@
 from director import new_word
 
-from speed.game.Scoreboard import Scoreboard
+from scoreboard import Scoreboard
 
 
 class answercheck():

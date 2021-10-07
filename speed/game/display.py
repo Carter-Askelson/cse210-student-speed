@@ -14,6 +14,15 @@ class Display():
     """
 
     def __init__(self):   
+        """Sets the screen size, starting point for the words, and the speeds the words bounce across the screen. 
+    
+        Stereotype: 
+            Constructor
+
+        Arguments:
+            None
+            
+        """
         #maybe get these from settings.py?
         self.SCREEN_WIDTH = 1280
         self.SCREEN_HEIGHT = 960
@@ -38,11 +47,22 @@ class Display():
     
     
 
-    def render_game(self, score = 0):
+    def render_game(self, new_score = 0, new_wordlist = ["Example Text1", "Example Text2", "Example Text3", "Example Text4", "Example Text5"]):
+        """Opens the Window of the Game and make the game render a new screen 80 times a second.
+    
+        Stereotype: 
+            Service Provider
+
+        Arguments:
+            new_score (answerchecker)
+            new_wordlist (wordbank)
+            
+        """
         arcade.open_window(self.SCREEN_WIDTH, self.SCREEN_HEIGHT, self.SCREEN_TITLE)
         arcade.set_background_color(arcade.color.BLACK)
         
         arcade.schedule(self.on_draw, 1 / 80)
+        #these next 3 probably need to go to on_draw
         #display score
         #display each word in word_list, needs to change a word everytime the player guesses one
         #display buffer
@@ -50,6 +70,16 @@ class Display():
         arcade.run()
 
     def on_draw(self, delta_time):
+
+        """Displays the new words at their new places in the screen + dsiplays the title
+    
+        Stereotype: 
+            Service Provider
+
+        Arguments:
+            delta_time
+            
+        """
         
         arcade.start_render()
         arcade.draw_text(self.SCREEN_TITLE, 300, 900, arcade.color.WHITE, 50)
@@ -92,6 +122,6 @@ class Display():
         
 
 
-
-game = Display()
-game.render_game()
+# tester
+# game = Display()
+# game.render_game()
