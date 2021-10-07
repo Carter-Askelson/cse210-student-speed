@@ -3,6 +3,7 @@ from .wordbank import WordBank
 from .display import Display
 from .scoreboard import Scoreboard
 from .answercheck import AnswerCheck
+from .buffer import Buffer
 
 
 class Director:
@@ -24,17 +25,19 @@ class Director:
         self.game_screen = Display()
         self.game_word_bank = WordBank()
         self.game_check_answer = AnswerCheck()
+        self.buffer = Buffer()
 
     def start_game(self):
         self.word_list = self.game_word_bank.get_words()
         # self.update_screen_score()
         self.game_screen.render_game(0, self.word_list)
+        self.game_play()
         
 
    #We need a method that calls answercheck untill the word list is empty
     def game_play(self):
         while len(self.word_list) == 0:
-            userInput = input(">")
+            userInput = self.buffer.on_key_press(arcade.key)
             self.score = self.game_check_answer.check_answer(self.word_list, userInput, self.game_score) #updates score in answercheck
         return self.score
                
