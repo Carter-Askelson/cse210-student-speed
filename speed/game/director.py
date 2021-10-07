@@ -31,14 +31,16 @@ class Director:
         self.word_list = self.game_word_bank.get_words()
         # self.update_screen_score()
         self.game_screen.render_game(0, self.word_list)
+        self.buffer
         self.game_play()
         
 
    #We need a method that calls answercheck untill the word list is empty
     def game_play(self):
-        while len(self.word_list) == 0:
-            userInput = self.buffer.on_key_press(arcade.key)
+        while (len(self.word_list) != 0) and (self.buffer.keep_playing == True):
+            userInput = self.buffer.user_input
             self.score = self.game_check_answer.check_answer(self.word_list, userInput, self.game_score) #updates score in answercheck
+            self.buffer.user_input = ""
         return self.score
                
 

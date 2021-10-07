@@ -16,8 +16,10 @@ class AnswerCheck:
 
 
     def check_answer(self, word_list, new_word, scoreboard):
-        for x in len(word_list):
+        x = 0
+        while x < len(word_list):
             if new_word == word_list[x]:
                 word_list.remove(word_list[x])
                 score = scoreboard.return_score()
+                x += 1
         return score
