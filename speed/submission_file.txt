@@ -1,2 +1,3 @@
 https://github.com/Carter-Askelson/cse210-student-speed
-# Todo add grading justification.
+We believe we got a 2 (7.5pts). We made some development progress but had a teammate drop the
+class.

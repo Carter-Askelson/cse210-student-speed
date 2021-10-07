@@ -43,3 +43,4 @@ root                    (project root folder)
 * Carter Askelson Askelsonc@gmail.com
 * Graham Walker walkerg5@byui.edu
 * Emma Burkett bur20089@byui.edu
+* Alex Parker parkeale@byui.edu
