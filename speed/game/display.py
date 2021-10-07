@@ -1,6 +1,4 @@
 import arcade
-
-
 import random
 
 
@@ -25,6 +23,7 @@ class Display:
             None
             
         """
+        
         #maybe get these from settings.py?
         self.SCREEN_WIDTH = 1280
         self.SCREEN_HEIGHT = 960
@@ -64,7 +63,7 @@ class Display:
         """
         arcade.open_window(self.SCREEN_WIDTH, self.SCREEN_HEIGHT, self.SCREEN_TITLE)
         arcade.set_background_color(arcade.color.BLACK)
-        
+        self.word_list = new_wordlist
         arcade.schedule(self.on_draw, 1 / 80)
         #these next 3 probably need to go to on_draw
         #display score
@@ -87,6 +86,7 @@ class Display:
         """
         
         arcade.start_render()
+        self.draw_score()
         arcade.draw_text(self.SCREEN_TITLE, 300, 900, arcade.color.WHITE, 50)
 
     
@@ -101,27 +101,27 @@ class Display:
         
         if new_color == 0:
             self.changing_x0 += self.changing_d0 * delta_time
-            arcade.draw_text(word, self.changing_x0 + x_modifier, 300, arcade.color.WHITE, 20)
+            arcade.draw_text(word, self.changing_x0 + x_modifier, 300, arcade.color.WHITE, 30)
             if self.changing_x0 < (0 - x_modifier) or self.changing_x0 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d0 *= -1
         elif new_color == 1:
-            arcade.draw_text(word, self.changing_x1 + x_modifier, 400, arcade.color.RED, 20)
+            arcade.draw_text(word, self.changing_x1 + x_modifier, 400, arcade.color.RED, 30)
             self.changing_x1 += self.changing_d1 * delta_time
             if self.changing_x1 < (0 - x_modifier) or self.changing_x1 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d1 *= -1
         elif new_color == 2:
             self.changing_x2 += self.changing_d2 * delta_time
-            arcade.draw_text(word, self.changing_x2 + x_modifier, 500, arcade.color.BLUE, 20)
+            arcade.draw_text(word, self.changing_x2 + x_modifier, 500, arcade.color.BLUE, 30)
             if self.changing_x2 < (0 - x_modifier) or self.changing_x2 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d2 *= -1
         elif new_color == 3:
             self.changing_x3 += self.changing_d3 * delta_time
-            arcade.draw_text(word, self.changing_x3 + x_modifier, 600, arcade.color.GREEN, 20)
+            arcade.draw_text(word, self.changing_x3 + x_modifier, 600, arcade.color.GREEN, 30)
             if self.changing_x3 < (0 - x_modifier) or self.changing_x3 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d3 *= -1
         elif new_color == 4:
             self.changing_x4 += self.changing_d4 * delta_time
-            arcade.draw_text(word, self.changing_x4 + x_modifier, 700, arcade.color.YELLOW, 20)
+            arcade.draw_text(word, self.changing_x4 + x_modifier, 700, arcade.color.YELLOW, 30)
             if self.changing_x4 < (0 - x_modifier) or self.changing_x4 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d4 *= -1
         
