@@ -1,6 +1,6 @@
+import arcade
 
-
-class Buffer:
+class Buffer(arcade.Window):
     """Detects player input.
 
     Stereotype: 
@@ -14,7 +14,8 @@ class Buffer:
     def __init__(self):
         self.new_word = ""
 
-    def get_letter(self):
+    def on_key_press(self, key):
+        
         """Gets the letter that was typed.
 
         Args:
@@ -23,6 +24,67 @@ class Buffer:
        Returns:
             string: The letter that was typed.
        """
+        user_input = ""
+        if key == arcade.key.Q:
+            user_input += "q"
+        elif key == arcade.key.W:
+            user_input += "w"
+        elif key == arcade.key.E:
+            user_input += "e"
+        elif key == arcade.key.R:
+            user_input += "r"
+        elif key == arcade.key.T:
+            user_input += "t"
+        elif key == arcade.key.Y:
+            user_input += "y"
+        elif key == arcade.key.U:
+            user_input += "u"
+        elif key == arcade.key.I:
+            user_input += "i"
+        elif key == arcade.key.O:
+            user_input += "o"
+        elif key == arcade.key.P:
+            user_input += "p"
+        elif key == arcade.key.A:
+            user_input += "a"
+        elif key == arcade.key.S:
+            user_input += "s"
+        elif key == arcade.key.D:
+            user_input += "d"
+        elif key == arcade.key.F:
+            user_input += "f"
+        elif key == arcade.key.G:
+            user_input += "g"
+        elif key == arcade.key.H:
+            user_input += "h"
+        elif key == arcade.key.J:
+            user_input += "j"
+        elif key == arcade.key.K:
+            user_input += "k"
+        elif key == arcade.key.L:
+            user_input += "l"
+        elif key == arcade.key.Z:
+            user_input += "z"
+        elif key == arcade.key.X:
+            user_input += "x"
+        elif key == arcade.key.C:
+            user_input += "c"
+        elif key == arcade.key.V:
+            user_input += "v"
+        elif key == arcade.key.B:
+            user_input += "b"
+        elif key == arcade.key.N:
+            user_input += "n"
+        elif key == arcade.key.M:
+            user_input += "m"
+        elif key == arcade.key.ESCAPE:
+            return False
+        elif key == arcade.key.ENTER:
+            return user_input
+        else:
+            user_input += ""
+        
+            
 
     # if ESC pressed:
     # sys.exit()

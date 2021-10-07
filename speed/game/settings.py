@@ -3,7 +3,6 @@ class Settings:
     
     Stereotype:
         Information Holder
-
     Attributes:
         
         

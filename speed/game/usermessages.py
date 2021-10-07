@@ -1,11 +1,8 @@
-
-
 class UserMessages:
     """handles giving the user helpful messages
     
     Stereotype:
         Interfacer
-
     Attributes:
         
         

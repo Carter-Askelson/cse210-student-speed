@@ -7,29 +7,44 @@ class Display:
     
     Stereotype: 
         Service Provider
-
     Attributes:
         
     """
 
 
-    def render_game(self, score, word_list):
-        score = 0
-        arcade.open_window(self.game_settings.SCREEN_WIDTH,
-                           self.game_settings.SCREEN_HEIGHT,
-                           self.game_settings.SCREEN_TITLE,
-                           self.game_settings.RADIUS)
-        arcade.set_background_color(arcade.color.BLACK)
-        arcade.start_render()
-        self.draw_score(score)
-        # display score
-        # display each word in word_list
-        # display buffer
-        arcade.finish_render()
-        arcade.run()
+    def __init__(self):   
+        """Sets the screen size, starting point for the words, and the speeds the words bounce across the screen. 
+    
+        Stereotype: 
+            Constructor
+        Arguments:
+            None
+            
+        """
+        
+        #maybe get these from settings.py?
+        self.SCREEN_WIDTH = 1280
+        self.SCREEN_HEIGHT = 960
+        self.SCREEN_TITLE = "Welcome to SPEED"
+        self.RADIUS = 150
+        self.changing_x0 = random.randint(0,600)
+        self.changing_x1 = random.randint(0,600)
+        self.changing_x2 = random.randint(0,600)
+        self.changing_x3 = random.randint(0,600)
+        self.changing_x4 = random.randint(0,600)
+        self.changing_d0 = random.randint(300,600)
+        self.changing_d1 = random.randint(300,600)
+        self.changing_d2 = random.randint(300,600)
+        self.changing_d3 = random.randint(300,600)
+        self.changing_d4 = random.randint(300,600)
+        self.word_list = ["Example Text1", "Example Text2", "Example Text3", "Example Text4", "Example Text5"]
+        
+        
 
-    def draw_score(self, score): #added a variable, score, so I can call this method in Scoreboard.return_score to update with every point
-        score_text = f"Score: {score}"
+   
+        
+    def draw_score(self):
+        score_text = f"Score: {0}"
         arcade.draw_text(score_text, 8, 936, arcade.csscolor.WHITE, 18)
     
 
@@ -38,7 +53,6 @@ class Display:
     
         Stereotype: 
             Service Provider
-
         Arguments:
             new_score (answerchecker)
             new_wordlist (wordbank)
@@ -61,8 +75,6 @@ class Display:
     
         Stereotype: 
             Service Provider
-
-
         Arguments:
             delta_time
             
@@ -108,8 +120,8 @@ class Display:
             if self.changing_x4 < (0 - x_modifier) or self.changing_x4 > (self.SCREEN_WIDTH - (185 + x_modifier)):
                 self.changing_d4 *= -1
         
-
-
+        
+            
 # tester
-game = Display()
-game.render_game()
+# game = Display()
+# game.render_game()

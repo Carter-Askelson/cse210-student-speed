@@ -6,7 +6,6 @@ class WordBank:
     
     Stereotype:
         Information Holder
-
     Attributes:
         
         
@@ -28,4 +27,3 @@ class WordBank:
             self.words_list.append(random.choice(lines))
             i += 1
         return self.words_list
-
