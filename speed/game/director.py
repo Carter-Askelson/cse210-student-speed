@@ -27,7 +27,6 @@ class Director:
 
     def start_game(self):
         self.word_list = self.game_word_bank.get_words()
-        print(self.word_list)
         # self.update_screen_score()
         self.game_screen.render_game(0, self.word_list)
         
