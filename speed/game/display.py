@@ -25,7 +25,6 @@ class Display:
             None
             
         """
-        self.game_settings = Settings()
         #maybe get these from settings.py?
         self.SCREEN_WIDTH = 1280
         self.SCREEN_HEIGHT = 960
